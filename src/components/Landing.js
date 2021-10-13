@@ -53,7 +53,7 @@ function Landing() {
         }
       )
       .from(
-        ".fixedBar",
+        ".text",
         1,
         {
           opacity: 0,
@@ -65,13 +65,12 @@ function Landing() {
 
   return (
     <section className="landingContainer">
-      <div className="fixedBar">
-        <span>
-          Scroll to explore
-          <br /> Oreo renders.
-        </span>
-        <span>Exploration©</span>
-      </div>
+      <span className="left text">
+        Scroll to explore
+        <br /> Oreo renders.
+      </span>
+      <span className="right text"> Exploration©</span>
+
       <div className="imgContainer">
         <img
           ref={landingImg}

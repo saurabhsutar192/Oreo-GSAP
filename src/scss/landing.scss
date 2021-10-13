@@ -32,27 +32,20 @@ body,
     transform-origin: 0% 0%;
   }
 
-  .fixedBar {
-    position: absolute;
-    display: flex;
+  .text {
     z-index: 3;
-    top: 0;
-    left: 0;
-    padding: 50px 140px;
-    width: 100%;
-    justify-content: space-between;
-    span:nth-child(1) {
-      color: #fff;
-      position: sticky;
-      top: 0;
-      left: 0;
-    }
-    span:nth-child(2) {
-      font-weight: 700;
-      position: fixed;
-      top: 60px;
-      right: 150px;
-    }
+  }
+  .left {
+    color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 150px;
+  }
+  .right {
+    font-weight: 700;
+    position: fixed;
+    top: 60px;
+    right: 150px;
   }
 
   .imgContainer {
@@ -86,9 +79,14 @@ body,
 }
 
 @media (max-width: 1200px) {
-  .landing {
-    .fixedBar {
-      padding: 50px 10vw;
+  .landingContainer {
+    .left {
+      top: 60px;
+      left: 10vw;
+    }
+    .right {
+      top: 60px;
+      right: 10vw;
     }
 
     .imgContainer {
