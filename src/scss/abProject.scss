@@ -1,0 +1,55 @@
+.abContainer {
+  padding: 150px;
+}
+
+.ab {
+  display: flex;
+  section {
+    flex: 0.5;
+  }
+  .left {
+    p {
+      position: sticky;
+      top: 50px;
+      left: 0;
+      font-size: 1.1rem;
+    }
+  }
+  .right {
+    border-left: 1px solid black;
+    padding: 0 20px;
+
+    h5 {
+      font-weight: 400;
+      font-size: 1rem;
+      color: rgb(136, 136, 136);
+    }
+  }
+  .abTitle {
+    display: flex;
+    flex-direction: column;
+    font-size: 3.4rem;
+    line-height: 2.9rem;
+    margin: 80px 0 380px 0;
+  }
+  .abDesc {
+    width: 60%;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .abContainer {
+    padding: 10vw;
+  }
+
+  .ab {
+    .abTitle {
+      display: flex;
+      flex-direction: column;
+      font-size: 4.5vw;
+      line-height: 4vw;
+      margin: 80px 0 380px 0;
+    }
+  }
+}
