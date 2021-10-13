@@ -24,7 +24,7 @@ function AbProject() {
       tl.from(
         elements[i],
         {
-          xPercent: 10 + i * 7,
+          xPercent: 5 + i * 7,
         },
         "<"
       );

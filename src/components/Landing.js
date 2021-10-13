@@ -13,6 +13,7 @@ function Landing() {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".landingContainer",
