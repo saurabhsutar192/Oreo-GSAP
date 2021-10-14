@@ -61,7 +61,7 @@ function Landing() {
         "<"
       )
       .delay(0.5);
-  }, []);
+  }, [landingAnim, brown]);
 
   return (
     <section className="landingContainer">
