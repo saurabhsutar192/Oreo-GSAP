@@ -1,10 +1,11 @@
 import "../css/landing.css";
-import { useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { gsap } from "gsap";
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Landing() {
+  let [loaded, setLoaded] = useState(false);
   let landingImg = useRef();
   gsap.registerPlugin(CSSRulePlugin);
   let brown = CSSRulePlugin.getRule(".landingContainer::after");
@@ -12,7 +13,8 @@ function Landing() {
   let landingAnim = gsap.timeline();
   gsap.registerPlugin(ScrollTrigger);
 
-  useEffect(() => {
+  function animate() {
+    setLoaded(true);
     window.scrollTo(0, 0);
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -61,7 +63,7 @@ function Landing() {
         "<"
       )
       .delay(0.5);
-  }, [landingAnim, brown]);
+  }
 
   return (
     <section className="landingContainer">
@@ -73,18 +75,21 @@ function Landing() {
 
       <div className="imgContainer">
         <img
+          onLoad={animate}
           ref={landingImg}
           src="https://uploads-ssl.webflow.com/6092b421e0419d1699b058a6/60ae09867154ce258eb8cff1_Cookie_Render13-p-3200.jpeg"
           alt="x"
           data-depth="2.5"
         />
       </div>
-      <div className="titleContainer">
-        <span>№</span>
-        <span>0</span>
-        <span>0</span>
-        <span>1</span>
-      </div>
+      {loaded && (
+        <div className="titleContainer">
+          <span>№</span>
+          <span>0</span>
+          <span>0</span>
+          <span>1</span>
+        </div>
+      )}
     </section>
   );
 }
