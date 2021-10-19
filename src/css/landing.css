@@ -27,7 +27,8 @@ body,
     z-index: 0;
     transform-origin: 0% 0%; }
   .landingContainer .text {
-    z-index: 3; }
+    z-index: 3;
+    opacity: 0; }
   .landingContainer .left {
     color: #fff;
     position: absolute;
@@ -59,7 +60,9 @@ body,
     font-size: 9vw;
     z-index: 3; }
     .landingContainer .titleContainer span {
-      display: block; }
+      display: block;
+      opacity: 0;
+      transform: translateY(100px); }
 
 @media (max-width: 1200px) {
   .landingContainer .left {

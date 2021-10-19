@@ -34,6 +34,7 @@ body,
 
   .text {
     z-index: 3;
+    opacity: 0;
   }
   .left {
     color: #fff;
@@ -74,6 +75,8 @@ body,
     @extend %centrofy;
     span {
       display: block;
+      opacity: 0;
+      transform: translateY(100px);
     }
   }
 }

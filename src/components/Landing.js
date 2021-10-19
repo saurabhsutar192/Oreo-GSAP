@@ -1,11 +1,10 @@
 import "../css/landing.css";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Landing() {
-  let [loaded, setLoaded] = useState(false);
   let landingImg = useRef();
   gsap.registerPlugin(CSSRulePlugin);
   let brown = CSSRulePlugin.getRule(".landingContainer::after");
@@ -14,7 +13,6 @@ function Landing() {
   gsap.registerPlugin(ScrollTrigger);
 
   function animate() {
-    setLoaded(true);
     window.scrollTo(0, 0);
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -30,9 +28,9 @@ function Landing() {
     tl.to(landingImg.current, { y: movement });
 
     landingAnim
-      .from(".titleContainer span", {
-        opacity: 0,
-        y: 100,
+      .to(".titleContainer span", {
+        opacity: 1,
+        y: 0,
         stagger: 0.05,
       })
       .to(brown, 1.5, {
@@ -54,11 +52,11 @@ function Landing() {
           ease: "expo.inOut",
         }
       )
-      .from(
+      .to(
         ".text",
         1,
         {
-          opacity: 0,
+          opacity: 1,
         },
         "<"
       )
@@ -82,14 +80,12 @@ function Landing() {
           data-depth="2.5"
         />
       </div>
-      {loaded && (
-        <div className="titleContainer">
-          <span>№</span>
-          <span>0</span>
-          <span>0</span>
-          <span>1</span>
-        </div>
-      )}
+      <div className="titleContainer">
+        <span>№</span>
+        <span>0</span>
+        <span>0</span>
+        <span>1</span>
+      </div>
     </section>
   );
 }
